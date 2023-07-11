@@ -4,13 +4,18 @@ import product from "../src/product.json"
 function ManageProduct() {
     const [products, setProducts] = useState([]);
     const [selectedProduct, setSelectedProduct] = useState(null);
-
+    const [deletedProduct, setDeletedProduct] = useState(null);
+    const [isLoggedIn, setIsLoggedIn] = useState(true);
 
     useEffect(() => {
         // Đọc danh sách sản phẩm từ file db.json
         setProducts(product.products);
     }, []);
-
+    useEffect(() => {
+        if (!isLoggedIn) {
+            window.location.href = '/login';
+        }
+    }, [isLoggedIn]);
     const handleViewDetail = (productId) => {
         // Xử lý hiển thị chi tiết sản phẩm với ID tương ứng
         console.log('View detail of product with ID:', productId);
@@ -35,6 +40,7 @@ function ManageProduct() {
     return (
         <div>
             <h1>Manage Products</h1>
+            <button onClick={() => setIsLoggedIn(false)}>Sign out</button>
             <table>
                 <thead>
                     <tr>

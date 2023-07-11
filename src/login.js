@@ -5,13 +5,13 @@ import { redirect } from 'react-router-dom';
 function Login() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [isLoggedIn, setIsLoggedIn] = useState('');
 
     const handleSubmit = (event) => {
         event.preventDefault();
         const user = db.users.find((u) => u.username === username && u.password === password);
         if (user) {
-            setIsLoggedIn(true);
+            setIsLoggedIn(user.username);
         } else {
             alert('Invalid username or password');
         }
