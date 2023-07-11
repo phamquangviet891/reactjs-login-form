@@ -23,7 +23,7 @@ function App() {
             <Routes>
                 <Route path="/login" element={<Login />}></Route>
                 <Route path="/manage-product" element={<ManageProduct />} />
-                <Route path="*" element={<Login />} />
+                <Route exact path="/" element={<Login />} />
 
             </Routes>
         </BrowserRouter>
