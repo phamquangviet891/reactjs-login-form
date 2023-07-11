@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import db from './db.json';
+import { redirect } from 'react-router-dom';
 
 function Login() {
     const [username, setUsername] = useState('');
@@ -38,6 +39,7 @@ function Login() {
                 </label>
                 <br />
                 <button type="submit">Login</button>
+                {/* <button onnclick={() => redirect('/login')}> Cancle</button> */}
             </form>
         </div>
     );
