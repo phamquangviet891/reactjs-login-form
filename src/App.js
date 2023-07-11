@@ -5,21 +5,6 @@ import ManageProduct from './manageProduct';
 import ProductDetail from './ProductDetail';
 function App() {
     return (
-        // <Router>
-        //     <div>
-        //         <Routes>
-        //             <Route path="/login">
-        //                 <Login />
-        //             </Route>
-        //             <Route path="/manage-product">
-        //                 <ManageProduct />
-        //             </Route>
-
-
-        //         </Routes>
-        //     </div>
-        // </Router>
-
         <BrowserRouter>
             <Routes>
                 <Route path="/login" element={<Login />}></Route>
