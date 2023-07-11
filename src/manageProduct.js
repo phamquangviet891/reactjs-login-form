@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import product from "../src/product.json"
-
+import product from "../src/product.json";
 function ManageProduct() {
     const [products, setProducts] = useState([]);
     const [selectedProduct, setSelectedProduct] = useState(null);
@@ -30,6 +29,7 @@ function ManageProduct() {
 
     const handleDelete = (productId) => {
         // Xử lý xóa sản phẩm với ID tương ứng
+
         console.log('Delete product with ID:', productId);
     };
 
